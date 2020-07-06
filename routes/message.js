@@ -12,7 +12,7 @@ router.use(function(req, res, next) {
 });
 
 router.route('/createmessage').post(createMessage);
-router.route('/getmessages').post(getMessages);
+router.route('/getmessages').get(getMessages);
 router.route('/getsinglemessage').get(getSingleMessage);
 
 module.exports = router;

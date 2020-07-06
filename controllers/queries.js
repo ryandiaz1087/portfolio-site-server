@@ -10,4 +10,7 @@ module.exports = {
   CREATE_USER,
   FIND_USER,
   GET_USER,
+  CREATE_MESSAGE,
+  GET_MESSAGES,
+  GET_SINGLE_MESSAGE,
 }
