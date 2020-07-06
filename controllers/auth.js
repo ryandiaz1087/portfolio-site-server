@@ -8,7 +8,6 @@ exports.createUser = async (req, res, next) => {
   const lastName = req.body.lastName.toLowerCase();
   const email = req.body.email.toLowerCase();
   const password = await hashPassword(req.body.password, 10);
-  console.log(CREATE_USER)
 
   try {
     const { rowCount } = await db.query(CREATE_USER, [firstName, lastName, email, password]);
