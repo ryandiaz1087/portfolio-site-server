@@ -3,15 +3,15 @@ const bcrypt = require('bcryptjs');
 const { isNil } = require('lodash');
 
 
-const generateToken = (userId) => {
-  return jwt.sign({ userId }, process.env.JWT_SECRET, { expiresIn: '7 days' });
-};
+const generateToken = userId => jwt.sign({ userId }, process.env.JWT_SECRET, { expiresIn: '7 days' });
 
 const getUserId = (req) => {
   const header = req.headers.authorization;
 
   if (isNil(header)) {
-    throw new Error('NO_AUTH_HEADER');
+    const err = new Error('User is not authenticated.');
+    err.name = 'UNAUTHENTICATED';
+    throw err;
   }
 
   const token = header.replace('Bearer ', '');
