@@ -3,7 +3,7 @@ const FIND_USER = `SELECT * FROM "User" WHERE email = $1;`;
 const GET_USER = `SELECT * FROM "User" WHERE id = $1;`;
 
 const CREATE_MESSAGE = `INSERT INTO "Message"(sender_email, msg) VALUES ($1, $2);`;
-const GET_MESSAGES = `SELECT * FROM "Message";`;
+const GET_MESSAGES = `SELECT * FROM "Message" ORDER BY created_at DESC;`;
 const GET_SINGLE_MESSAGE = `SELECT * FROM "Message" WHERE id = $1;`;
 
 module.exports = {
