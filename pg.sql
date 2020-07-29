@@ -14,4 +14,12 @@ CREATE TABLE "Message"(
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE "StaticContent"(
+    id UUID NOT NULL PRIMARY KEY DEFAULT uuid_generate_v4(),
+    string_name VARCHAR(255) NOT NULL,
+    title VARCHAR(50) NOT NULL,
+    msg VARCHAR(1000) NOT NULL,
+    content_type VARCHAR(50) NOT NULL
+);
+
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
